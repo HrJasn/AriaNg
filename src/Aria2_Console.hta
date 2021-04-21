@@ -67277,6 +67277,15 @@
 				console.log('Aria is not excute');
 				this.title = 'Press to excute Aria';
 				
+				var WShellExec = WShell.run("net stop winnat",0);
+				var WShellExec = WShell.run("net stop LanmanWorkstation",0);
+				var WShellExec = WShell.run("net stop WlanSvc",0);
+				var WShellExec = WShell.run("net stop WwanSvc",0);
+				var WShellExec = WShell.run("netsh int ipv4 add excludedportrange protocol=tcp numberofports=1 startport=6800",0);
+				var WShellExec = WShell.run("net start winnat",0);
+				var WShellExec = WShell.run("net start LanmanWorkstation",0);
+				var WShellExec = WShell.run("net start WlanSvc",0);
+				var WShellExec = WShell.run("net start WwanSvc",0);
 				var WShellExec = WShell.run("aria2c.exe --conf-path=aria2.conf",0);
 
 			} else if(aria2_Status_Label.classList.contains("label-success")){
